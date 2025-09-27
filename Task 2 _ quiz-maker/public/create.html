@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Create/Edit Quiz</h1>
+            <button onclick="navigateTo('/')">Home</button>
+        </header>
+
+        <form id="quizForm">
+            <input type="hidden" id="editId" value="">
+            <div class="form-group">
+                <label for="title">Quiz Title:</label>
+                <input type="text" id="title" required>
+            </div>
+
+            <div id="questionsContainer">
+                <!-- Dynamic questions added via JS -->
+            </div>
+
+            <button type="button" onclick="addQuestion()">Add Question</button>
+            <button type="submit">Save Quiz</button>
+        </form>
+
+        <div id="status"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        let questionCount = 0;
+
+        // Add first question
+        document.addEventListener('DOMContentLoaded', function() {
+            addQuestion();
+            
+            document.getElementById('quizForm').onsubmit = createQuiz;
+
+            // If editing, load data
+            const urlParams = new URLSearchParams(window.location.search);
+            const editId = urlParams.get('edit');
+            if (editId) {
+                document.getElementById('editId').value = editId;
+                loadQuizForEdit(editId);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "harsh@gmail.com",
+      "password": "$2b$10$t3fiuhTY7HhvKKXV7/uenuTzdoWRmelakXKUJmNVHeqGwNITXR8SS"
+    }
+  ],
+  "quizzes": []
+}

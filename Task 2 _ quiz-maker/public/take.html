@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="quizTitle">Loading...</h1>
+            <button onclick="navigateTo('/')">Home</button>
+        </header>
+
+        <div class="progress-bar">
+            <div id="progressFill" style="width: 0%"></div>
+        </div>
+
+        <div id="quizContent">
+            <!-- Dynamic questions via JS -->
+        </div>
+
+        <div id="results" style="display: none;">
+            <h2>Results</h2>
+            <p id="score"></p>
+            <div id="resultsList"></div>
+            <button onclick="navigateTo('/')">Back to Home</button>
+        </div>
+
+        <div id="status"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const quizId = urlParams.get('id');
+        if (quizId) {
+            loadQuiz(quizId);
+        }
+    </script>
+</body>
+</html>

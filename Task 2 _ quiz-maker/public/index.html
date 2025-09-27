@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Maker - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Welcome to Quiz Maker</h1>
+            <p>Create, take, and share quizzes easily!</p>
+        </header>
+
+        <div class="auth-section" id="authSection">
+            <!-- Dynamic: Login/Register form via JS -->
+        </div>
+
+        <div class="nav-buttons" id="navButtons" style="display: none;">
+            <button onclick="navigateTo('/create')">Create a Quiz</button>
+            <button onclick="navigateTo('/list')">View My Quizzes</button>
+            <a href="/list" class="take-link">Take a Quiz (All Available)</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        <div id="status"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            checkAuth();
+        };
+    </script>
+</body>
+</html>

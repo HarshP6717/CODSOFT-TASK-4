@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Quizzes</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>My Quizzes</h1>
+            <button onclick="navigateTo('/create')">Create New Quiz</button>
+            <button onclick="navigateTo('/')">Home</button>
+        </header>
+
+        <div id="quizzesList">
+            <!-- Dynamic list via JS -->
+        </div>
+
+        <div id="allQuizzesSection">
+            <h2>All Quizzes (for Taking)</h2>
+            <div id="allQuizzesList">
+                <!-- Dynamic via JS -->
+            </div>
+        </div>
+
+        <div id="status"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        window.onload = function() {
+            loadMyQuizzes();
+            loadAllQuizzes();
+        };
+    </script>
+</body>
+</html>
